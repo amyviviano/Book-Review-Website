@@ -3,7 +3,7 @@
 Users can register for the website and then log in using their username and password. 
 Once they log in, they will be able to search for books, leave reviews for individual books, and see the reviews made by other people.
 Uses the API by Goodreads, another book review website, to pull in ratings from a broader audience. 
-Users will be able to query for book details and book reviews programmatically via your website’s API.
+Users can query for book details and reviews programmatically via the website’s API.
 
 This Python Flask web app uses a PostgreSQL database to keep track of books information, user information, and book reviews.  
 
