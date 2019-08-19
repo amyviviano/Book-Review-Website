@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+{% endblock %}
+
+{% block body %}
+<body background="../static/thomas-kelley-hHL08lF7Ikc-unsplash (3).jpg">
+    <h1 class="heading">BOOK REVIEWS</h1>
+    <p class = "heading">Register or Login to Search for and<br> Review books</p>
+        <div class="form-container">
+      	    <div class="row">
+                <div class="col-lg-5 col-sm-12">
+    				        <form class="form-block" action="{{ url_for('register') }}" method="post">
+                        <h2 class="form-title"> Register </h2>
+    					          <div class="form-group">
+    						            <label class="form-label" for="username">Username</label>
+    						            <input type="text" class="form-control" name="username" placeholder="Enter Username">
+    					          </div>
+    					          <div class="form-group">
+    						            <label class="form-label" for="password">Password</label>
+    						            <input type="password" class="form-control" name="password" placeholder="Enter Password">
+    					          </div>
+    					          <button type="submit" class="btn btn-primary">Submit</button>
+    				        </form>
+    			      </div>
+                <div class="col-lg-1 col-sm-12">
+                </div>
+    			      <div class="col-lg-5 col-sm-12">
+    				        <form class="form-block" action="{{ url_for('login') }}" method="post">
+                        <h2 class="form-title"> Login </h2>
+    					          <div class="form-group">
+    						            <label class="form-label" for="username">Username</label>
+    						            <input type="text" class="form-control" name="username" placeholder="Enter username">
+    					          </div>
+    					          <div class="form-group">
+    						            <label class="form-label" for="password">Password</label>
+    						            <input type="password" class="form-control" name="password" placeholder="Password">
+    					          </div>
+    					          <button type="submit" class="btn btn-primary">Submit</button>
+    			          </form>
+  		      </div>
+            <div class="col-lg-1 col-sm-12">
+            </div>
+        </div>
+{% endblock %}

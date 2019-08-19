@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+Error Message
+{% endblock %}
+
+{% block body %}
+    <div class="errormsg">
+      {{ errormsg }}
+      <a href="#" onclick="history.go(-1)">Go Back</a>
+    </div>
+{% endblock %}

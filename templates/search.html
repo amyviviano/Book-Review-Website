@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Hello, {{ username }}
+{% endblock %}
+
+{% block body %}
+<body background="../static/thomas-kelley-hHL08lF7Ikc-unsplash (3).jpg">
+<form class="form-block" action="{{ url_for('results') }}" method="post">
+    <h2 class="form-title">Find a Book to Review</h2>
+    <h4 class="form-title">Search by IBSN</h4>
+    <div class="form-group">
+        <input type="text" class="form-control" name="isbn" placeholder="Enter ISBN">
+    </div>
+    <h4 class="form-title">Search by Title</h4>
+    <div class="form-group">
+        <input type="text" class="form-control" name="title" placeholder="Enter Title">
+    </div>
+    <div class="form-group">
+    <h4 class="form-title">Search by Author</h4>
+        <input type="text" class="form-control" name="author" placeholder="Enter Author">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

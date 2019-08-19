@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    {{ book.title }}
+{% endblock %}
+
+{% block body %}
+<body background="../static/thomas-kelley-hHL08lF7Ikc-unsplash (3).jpg">
+<div class="row">
+    <div class="col-lg-6 col-sm-12">
+        <div class="form-block">
+            <div class="book-result">
+                <h4>ISBN: {{ book.isbn }} </h4>
+                <h4>Title: {{ book.title }} </h4>
+                <h4>Author: {{ book.author }} </h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+        <div class="form-block">
+            <a href="http://goodreads.com"><img class="logo-resize" align="center" src="https://s.gr-assets.com/assets/icons/goodreads_icon_1000x1000-aed808dec2093e20867b35cd56d9862d.png"></a>
+            <h4> Goodreads.com Avg Rating: {{ avg_rating }} </h4>
+            <h4> Number of Reviews: {{ num_rating }} </h4>
+        </div>
+    </div>
+</div>
+<form class="form-block" action="{{ url_for('newreview') }}" method="post">
+    <h2 class="form-title"> Add Review </h2>
+    <div class="form-group">
+        <label class="form-label" for="rating">Rating</label>
+        <select name="rating" class="form-control" required>
+            <option selected value disabled> -- select rating -- </option>
+            <option value="1">1 star</option>
+            <option value="2">2 stars</option>
+            <option value="3">3 stars</option>
+            <option value="4">4 stars</option>
+            <option value="5">5 stars</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="review">Review</label>
+        <textarea class="form-control" id="Textarea" rows="5" name="review" placeholder="Enter Review"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div class="form-block">
+    <h2 class="form-title"> Reviews </h2>
+    <ul>
+        {% for review in reviews %}
+            <li>
+                {{ review.rating }} / 5 Stars
+                <br> {{ review.review }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+
+{% endblock %}

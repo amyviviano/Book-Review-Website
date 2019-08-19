@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+<body background="../static/thomas-kelley-hHL08lF7Ikc-unsplash (3).jpg">
+<div class="form-block">
+    <div class="list">
+    <ol>
+        {% for book_row in book_rows %}
+            <li>
+                <a href="{{ url_for('book', book_id=book_row.id) }}">
+                {{ book_row.isbn }} {{ book_row.title }} {{ book_row.author }}
+                </a>
+            </li>
+        {% endfor %}
+    </ol>
+    </div>
+</div>
+
+{% endblock %}
